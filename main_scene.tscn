@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0fle1q3kmukt"]
+
+[ext_resource type="Shape2D" uid="uid://ny1xktdwxwnw" path="res://duck_shape.tres" id="1_44c0x"]
+
+[node name="ODSea" type="Node2D"]
+
+[node name="ODSeaBody" type="CharacterBody2D" parent="."]
+
+[node name="ODSeaSprite" type="Sprite2D" parent="ODSeaBody"]
+
+[node name="ODSeaCollisionShape" type="CollisionShape2D" parent="ODSeaBody"]
+shape = ExtResource("1_44c0x")
