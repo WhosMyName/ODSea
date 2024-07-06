@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2qprr5ps4hsv"]
+
+[ext_resource type="PackedScene" uid="uid://c1wmyddg67uv7" path="res://od_sea.tscn" id="1_fgbhb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ODSeaBody" parent="." instance=ExtResource("1_fgbhb")]
