@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1wmyddg67uv7"]
+
+[ext_resource type="Script" path="res://ODSea_Script.gd" id="1_p1a0j"]
+[ext_resource type="Texture2D" uid="uid://bbookiuqfu8oj" path="res://ODSeaSprite.png" id="2_xu182"]
+[ext_resource type="Shape2D" uid="uid://djlilg4pkghws" path="res://odses_shape.tres" id="3_vbxew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7puk"]
+bg_color = Color(3.94672e-06, 0.723515, 0.257408, 1)
+
+[node name="ODSeaBody" type="Area2D"]
+script = ExtResource("1_p1a0j")
+
+[node name="ODSeaCollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(0.05, 0.05)
+shape = ExtResource("3_vbxew")
+
+[node name="ODSeaSprite" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xu182")
+
+[node name="TimerList" type="ItemList" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer1" type="Timer" parent="TimerList"]
+
+[node name="Timer2" type="Timer" parent="TimerList"]
+
+[node name="Timer3" type="Timer" parent="TimerList"]
+
+[node name="Timer4" type="Timer" parent="TimerList"]
+
+[node name="Timer5" type="Timer" parent="TimerList"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ODSeaHealth" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -54.0
+offset_right = 40.0
+offset_bottom = -39.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_o7puk")
+value = 100.0
+show_percentage = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=6]
